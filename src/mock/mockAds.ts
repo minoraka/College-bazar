@@ -3,26 +3,35 @@ import type { IAdvertisement } from "../types/ad";
 export const mockAds: IAdvertisement[] = [
   {
     id: "1",
-    title: "Бурмалда",
-    description: "мощная бурмалда",
+    title: "Высшая бурммалда",
+    description: "как я устал это делатьцу",
     category: "textbooks",
     contacts: "@tg_user1",
-    createdAt: "1488-67-01",
+    createdAt: "1488 дней назад",
+    price: 500,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ainy71i2VVI8Kr231ZOnogd5MW2JHAdkpJe96ywt-A&s",
   },
   {
     id: "2",
-    title: "iPhone 11 ",
-    description: "норм звонилка 45%акб",
+    title: "iPhone 11",
+    description: "Акб 45% как новый почти",
     category: "electronics",
     contacts: "+123456",
-    createdAt: "1488-67-02",
+    createdAt: "1 день назад",
+    price: 12000,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcPsA8qHFGvVepFLvNzmTgXNo5c6KfpdgxtC8SPZ4Cg&s=10",
   },
   {
     id: "3",
-    title: "Кепка",
-    description: "четткая",
+    title: "Худак оверсайз",
+    description: "Чёткая, носил пару раз",
     category: "clothes",
     contacts: "@tg_user2",
-    createdAt: "1488-67-01",
+    createdAt: "Сегодня",
+    price: 1500,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Y8aGHj29-HWLLvqh4QW6z5Vo-B5zocyY85b8QvZhIg&s=10",
   },
 ];
