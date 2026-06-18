@@ -7,4 +7,6 @@ export interface IAdvertisement {
   category: AdCategory;
   contacts: string;
   createdAt: string;
+  price?: number;
+  image?: string;
 }

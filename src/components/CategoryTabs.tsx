@@ -8,6 +8,7 @@ export default function CategoryTabs() {
   const active = params.get("category") || "all";
 
   const setCategory = (cat: string) => {
+    console.log("CLICK!", cat);
     if (cat === "all") {
       setParams({});
     } else {
