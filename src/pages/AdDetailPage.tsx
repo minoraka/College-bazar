@@ -9,19 +9,31 @@ export default function AdDetailPage() {
 
   useEffect(() => {
     if (id) {
-      adsApi.getById(id).then((data) => {
-        if (data) setAd(data);
+      adsApi.getAll().then((ads) => {
+        const found = ads.find((a) => a.id === id);
+        setAd(found || null);
       });
     }
   }, [id]);
 
-  if (!ad) return <div>Loading...</div>;
+  if (!ad) return <div className="p-4">Loading...</div>;
 
   return (
-    <div className="p-4 border rounded">
+    <div className="max-w-xl mx-auto border p-6 rounded-xl">
       <h1 className="text-2xl font-bold">{ad.title}</h1>
-      <p className="mt-2">{ad.description}</p>
-      <p className="mt-2 text-blue-600">{ad.contacts}</p>
+
+      <p className="text-sm text-gray-500 mt-1">{ad.category}</p>
+
+      <p className="mt-4">{ad.description}</p>
+
+      <div className="mt-6 p-3 bg-gray-100 rounded">
+        <p className="font-semibold">Contacts:</p>
+        <p>{ad.contacts}</p>
+      </div>
+
+      <p className="text-xs text-gray-400 mt-4">
+        {ad.createdAt}
+      </p>
     </div>
   );
 }

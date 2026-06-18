@@ -14,4 +14,5 @@ export const adsApi = {
   getByCategory: async (category: AdCategory) => {
     return mockAds.filter((ad) => ad.category === category);
   },
-};
+};  
+
