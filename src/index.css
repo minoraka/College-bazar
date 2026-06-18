@@ -109,3 +109,13 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+
+body {
+  background: #f6f7fb;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  pointer-events: auto !important;
+}

@@ -9,21 +9,22 @@ export default function CategoryTabs() {
 
   const setCategory = (cat: string) => {
     if (cat === "all") {
-      params.delete("category");
-      setParams(params);
+      setParams({});
     } else {
       setParams({ category: cat });
     }
   };
 
   return (
-    <div className="flex gap-2 mb-4 flex-wrap">
+    <div className="flex gap-2 flex-wrap mb-5">
       {categories.map((cat) => (
         <button
           key={cat}
           onClick={() => setCategory(cat)}
-          className={`px-3 py-1 rounded border ${
-            active === cat ? "bg-black text-white" : ""
+          className={`px-3 py-1 rounded-full border text-sm transition ${
+            active === cat
+              ? "bg-black text-white"
+              : "bg-white hover:bg-gray-100"
           }`}
         >
           {cat}
@@ -31,4 +32,4 @@ export default function CategoryTabs() {
       ))}
     </div>
   );
-}   
+}
