@@ -34,4 +34,22 @@ export const mockAds: IAdvertisement[] = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Y8aGHj29-HWLLvqh4QW6z5Vo-B5zocyY85b8QvZhIg&s=10",
   },
+
+
+  {
+    id: "4",
+    title: "Чувашия",
+    description: "Чёткая, носил пару раз",
+    category: "other",
+    contacts: "@tg_userfv",
+    createdAt: "завтра",
+    price: 67676,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWfEIkhSJ7_gzN5Ph_9kQR9Od3GRDcqUESQnt6pZgV0g&s=10",
+  },
+
+
+
 ];
+
+
