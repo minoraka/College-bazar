@@ -74,6 +74,10 @@ export default function AdCard({ ad }: { ad: IAdvertisement }) {
 
       <h2 className="font-bold text-xl text-navy leading-snug">{ad.title}</h2>
 
+      <p className="text-sm text-navy/60 mt-1.5 line-clamp-2">
+        {ad.description}
+      </p>
+
       <div className="mt-4 pt-3 border-t border-dotted border-navy/40 flex justify-between items-end">
         <div>
           <div className="text-[10px] tracking-wide text-navy/40 uppercase">
