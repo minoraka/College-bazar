@@ -20,10 +20,6 @@
 import { mockAds } from "../mock/mockAds";
 import type { AdCategory, IAdvertisement } from "../types/ad";
 
-// Ключ хранения объявлений, созданных пользователем локально (пока нет backend).
-// Когда появится реальный API — этот файл достаточно переписать на axios-вызовы,
-// остальной код (HomePage, AdDetailPage, CreateAdPage) трогать не придётся,
-// так как все они работают только через объект adsApi.
 const STORAGE_KEY = "college_bazar_ads";
 
 function readStoredAds(): IAdvertisement[] {
