@@ -9,4 +9,6 @@ export interface IAdvertisement {
   createdAt: string;
   price?: number;
   image?: string;
+  sellerName?: string;
+  sellerJoinedAt?: string;
 }

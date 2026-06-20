@@ -11,6 +11,8 @@ export const mockAds: IAdvertisement[] = [
     price: 500,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Ainy71i2VVI8Kr231ZOnogd5MW2JHAdkpJe96ywt-A&s",
+    sellerName: "РВГВввуцв У.",
+    sellerJoinedAt: "Продавец с 2023г.",
   },
   {
     id: "2",
@@ -22,6 +24,9 @@ export const mockAds: IAdvertisement[] = [
     price: 12000,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcPsA8qHFGvVepFLvNzmTgXNo5c6KfpdgxtC8SPZ4Cg&s=10",
+
+    sellerName: "Крутой Н.",
+    sellerJoinedAt: "Продавец с 2024г.",
   },
   {
     id: "3",
@@ -33,5 +38,7 @@ export const mockAds: IAdvertisement[] = [
     price: 1500,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Y8aGHj29-HWLLvqh4QW6z5Vo-B5zocyY85b8QvZhIg&s=10",
+    sellerName: "Али К.",
+    sellerJoinedAt: "Продавец с 2029г.",
   },
 ];

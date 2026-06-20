@@ -171,6 +171,32 @@ export default function AdDetailPage() {
             </p>
             <p className="font-semibold text-navy">{ad.contacts}</p>
           </div>
+
+          {ad.sellerName && (
+            <div className="bg-white border-2 border-navy p-4">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-accent border-2 border-navy flex items-center justify-center font-bold text-navy shrink-0">
+                  {ad.sellerName.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-semibold text-navy text-sm">
+                    {ad.sellerName}
+                  </p>
+                  {ad.sellerJoinedAt && (
+                    <p className="text-xs text-navy/40">
+                      {ad.sellerJoinedAt}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="border-t border-dotted border-navy/30 my-3" />
+
+              <div className="border border-navy/20 rounded-lg px-3 py-2 text-center text-sm font-medium text-navy">
+                {ad.contacts}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
