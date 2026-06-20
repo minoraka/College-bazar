@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { adsApi } from "../api/adsApi";
 import type { AdCategory } from "../types/ad";
 
 const categories: { value: AdCategory; label: string }[] = [
@@ -18,22 +19,32 @@ export default function CreateAdPage() {
   const [category, setCategory] = useState<AdCategory>("textbooks");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
 
     if (!title.trim() || !contacts.trim()) return;
 
-    console.log({
-      title,
-      description,
-      contacts,
-      category,
-      price: price ? Number(price) : undefined,
-      image: image || undefined,
-    });
+    setSubmitting(true);
+    try {
+      await adsApi.create({
+        title: title.trim(),
+        description: description.trim(),
+        contacts: contacts.trim(),
+        category,
+        price: price ? Number(price) : undefined,
+        image: image.trim() || undefined,
+      });
 
-    navigate("/");
+      navigate("/");
+    } catch {
+      setError("Не удалось опубликовать объявление. Попробуйте ещё раз.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -159,12 +170,19 @@ export default function CreateAdPage() {
           </div>
         </div>
 
+        {error && (
+          <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+            {error}
+          </p>
+        )}
+
         <div className="flex gap-3 pt-2">
           <button
             type="submit"
-            className="flex-1 bg-accent border-2 border-navy text-navy py-2.5 rounded-lg font-semibold shadow-hard-sm hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition"
+            disabled={submitting}
+            className="flex-1 bg-accent border-2 border-navy text-navy py-2.5 rounded-lg font-semibold shadow-hard-sm hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition disabled:opacity-60 disabled:pointer-events-none"
           >
-            Опубликовать
+            {submitting ? "Публикуем..." : "Опубликовать"}
           </button>
           <button
             type="button"
