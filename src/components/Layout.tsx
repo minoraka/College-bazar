@@ -29,7 +29,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             + Подать объявление
           </Link>
 
-          <div className="w-9 h-9 rounded-full border-2 border-navy bg-navy-50 flex items-center justify-center text-navy shrink-0">
+          <Link
+            to="/account"
+            className="w-9 h-9 rounded-full border-2 border-navy bg-navy-50 flex items-center justify-center text-navy shrink-0 hover:bg-accent transition"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -41,7 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <path d="M20 21a8 8 0 1 0-16 0" />
               <circle cx="12" cy="7" r="4" />
             </svg>
-          </div>
+          </Link>
         </div>
       </header>
 

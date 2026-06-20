@@ -39,6 +39,7 @@ function getCombinedAds(): IAdvertisement[] {
 
   return [...readStoredAds(), ...mockAds];
 }
+
 const FAKE_DELAY_MS = 500;
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -74,5 +75,17 @@ export const adsApi = {
 
     return newAd;
   },
-};
+  
+  getMyAds: async (): Promise<IAdvertisement[]> => {
+    await delay(FAKE_DELAY_MS);
+    return readStoredAds();
+  },
 
+  getByIds: async (ids: string[]): Promise<IAdvertisement[]> => {
+    await delay(FAKE_DELAY_MS);
+    const all = getCombinedAds();
+    return ids
+      .map((id) => all.find((ad) => ad.id === id))
+      .filter((ad): ad is IAdvertisement => Boolean(ad));
+  },
+};

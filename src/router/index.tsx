@@ -4,6 +4,7 @@ import AdDetailPage from "../pages/AdDetailPage";
 import CreateAdPage from "../pages/CreateAdPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import AccountPage from "../pages/AccountPage";
 
 export default function Router() {
   return (
@@ -13,6 +14,7 @@ export default function Router() {
       <Route path="/" element={<HomePage />} />
       <Route path="/ads/:id" element={<AdDetailPage />} />
       <Route path="/create" element={<CreateAdPage />} />
+      <Route path="/account" element={<AccountPage />} />
     </Routes>
   );
 }

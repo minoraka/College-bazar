@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { IAdvertisement } from "../types/ad";
+import { favoritesApi } from "../api/favoritesApi";
 
 const categoryLabels: Record<string, string> = {
   textbooks: "Учебники",
@@ -16,6 +18,16 @@ const badgeColors: Record<string, string> = {
 };
 
 export default function AdCard({ ad }: { ad: IAdvertisement }) {
+  const [isFavorite, setIsFavorite] = useState(() =>
+    favoritesApi.isFavorite(ad.id)
+  );
+
+  const handleToggleFavorite = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const newState = favoritesApi.toggle(ad.id);
+    setIsFavorite(newState);
+  };
+
   return (
     <Link
       to={`/ads/${ad.id}`}
@@ -32,14 +44,16 @@ export default function AdCard({ ad }: { ad: IAdvertisement }) {
 
         <button
           type="button"
-          onClick={(e) => e.preventDefault()}
-          aria-label="Добавить в избранное"
+          onClick={handleToggleFavorite}
+          aria-label={
+            isFavorite ? "Убрать из избранного" : "Добавить в избранное"
+          }
           className="w-7 h-7 flex items-center justify-center text-navy hover:text-navy/60"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            fill="none"
+            fill={isFavorite ? "currentColor" : "none"}
             stroke="currentColor"
             strokeWidth="1.8"
             className="w-5 h-5"
@@ -95,4 +109,4 @@ export default function AdCard({ ad }: { ad: IAdvertisement }) {
       </div>
     </Link>
   );
-}
+} 
