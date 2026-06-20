@@ -98,6 +98,7 @@ export default function AdDetailPage() {
             <h1 className="text-2xl font-bold text-navy leading-snug">
               {ad.title}
             </h1>
+            <p className="text-xs text-navy/40 mt-1">{ad.createdAt}</p>
           </div>
 
           <div className="bg-navy text-white p-4 rounded-lg flex items-center justify-between">

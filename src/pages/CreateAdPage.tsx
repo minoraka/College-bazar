@@ -72,22 +72,17 @@ export default function CreateAdPage() {
           <label className="block text-sm font-semibold text-navy mb-1.5">
             Категория
           </label>
-          <div className="flex gap-2 flex-wrap">
+          <select
+            className="w-full border-2 border-navy/30 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-navy bg-white"
+            value={category}
+            onChange={(e) => setCategory(e.target.value as AdCategory)}
+          >
             {categories.map((cat) => (
-              <button
-                key={cat.value}
-                type="button"
-                onClick={() => setCategory(cat.value)}
-                className={`px-3 py-1.5 rounded-lg border-2 text-sm font-medium transition ${
-                  category === cat.value
-                    ? "bg-accent border-navy text-navy shadow-hard-sm"
-                    : "bg-white border-navy/20 text-navy/70 hover:border-navy"
-                }`}
-              >
+              <option key={cat.value} value={cat.value}>
                 {cat.label}
-              </button>
+              </option>
             ))}
-          </div>
+          </select>
         </div>
 
         <div>
@@ -158,7 +153,7 @@ export default function CreateAdPage() {
               onChange={(e) => setImage(e.target.value)}
             />
             <p className="text-xs text-navy/40 mt-2">
-              xагрузка файлов скоро будет доступна — пока вставь ссылку на
+              Загрузка файлов скоро будет доступна — пока вставь ссылку на
               изображение
             </p>
           </div>
@@ -181,7 +176,7 @@ export default function CreateAdPage() {
       </form>
 
       <p className="text-xs text-navy/40 text-center mt-4">
-        * опубликованные объявления проходят модерацию в течение 10 минут.
+        * Опубликованные объявления проходят модерацию в течение 10 минут.
       </p>
     </div>
   );
