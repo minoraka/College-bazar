@@ -33,9 +33,7 @@ bash   npm run dev
 
 
 
-# College Bazar — Полная инструкция по запуску
-
-Студенческий маркетплейс. Проект состоит из двух частей:
+# College Bazar — инструкция по запуску
 
 - `ads-frontend` — React + TypeScript + Vite (фронтенд)
 - `college-bazar-backend` — Python + Django REST Framework (бэкенд)
@@ -56,7 +54,7 @@ python --version   # или python3 --version
 
 ---
 
-## Структура папок
+## cтруктура папок
 
 ```
 College bazar/
@@ -66,7 +64,7 @@ College bazar/
 
 ---
 
-## Часть 1 — Запуск бэкенда (Django)
+## 1 — Запуск бэкенда (Django)
 
 откройте терминал и перейди в папку бэкенда:
 
@@ -74,7 +72,7 @@ College bazar/
 cd "College bazar/college-bazar-backend"
 ```
 
-### Шаг 1. Создать виртуальное окружение
+### 1. Создать виртуальное окружение
 
 ```bash
 python -m venv venv
