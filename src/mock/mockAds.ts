@@ -41,4 +41,22 @@ export const mockAds: IAdvertisement[] = [
     sellerName: "Али К.",
     sellerJoinedAt: "Продавец с 2029г.",
   },
+
+
+  {
+    id: "4",
+    title: "Чувашия",
+    description: "Чёткая, носил пару раз",
+    category: "other",
+    contacts: "@tg_userfv",
+    createdAt: "завтра",
+    price: 67676,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWfEIkhSJ7_gzN5Ph_9kQR9Od3GRDcqUESQnt6pZgV0g&s=10",
+  },
+
+
+
 ];
+
+
